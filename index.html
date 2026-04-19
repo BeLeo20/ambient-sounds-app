@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ambient Sounds App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f1a;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    p.subtitle { color: #aaa; margin-bottom: 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .card {
+      background: #1e1e2e;
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .card:hover { background: #2a2a3e; }
+    .card.active { background: #3b3b6b; border: 2px solid #7c7cff; }
+    .card .icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .card .name { font-size: 0.95rem; margin-bottom: 12px; }
+    input[type=range] { width: 100%; accent-color: #7c7cff; }
+  </style>
+</head>
+<body>
+  <h1>🔊 Ambient Sounds</h1>
+  <p class="subtitle">Mix your perfect soundscape</p>
+  <div class="grid">
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🌧️</div>
+      <div class="name">Rain</div>
+      <input type="range" min="0" max="100" value="70">
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🌊</div>
+      <div class="name">Ocean</div>
+      <input type="range" min="0" max="100" value="50">
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🌲</div>
+      <div class="name">Forest</div>
+      <input type="range" min="0" max="100" value="40">
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🔥</div>
+      <div class="name">Fireplace</div>
+      <input type="range" min="0" max="100" value="60">
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🚂</div>
+      <div class="name">Train</div>
+      <input type="range" min="0" max="100" value="30">
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="icon">🐦</div>
+      <div class="name">Birds</div>
+      <input type="range" min="0" max="100" value="50">
+    </div>
+  </div>
+  <script>
+    function toggle(card) {
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
